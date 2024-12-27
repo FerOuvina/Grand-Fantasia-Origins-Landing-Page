@@ -118,7 +118,6 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegister(); //this should be called in the validateForm() check bellow, but there is an error with that function
     if (validateForm()) {
       console.log("Form data submitted:", formData);
       handleRegister();

@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
-import { useLocation, Link } from "wouter";
+import { Link } from "wouter";
 import "../../css/global.css";
 import { getVerify } from "../../services/auth";
+import { useTranslation } from "react-i18next";
+import { statuses } from "../../helpers/constants";
 
 export default function MailVerification() {
-  const [status, setStatus] = useState("loading"); // 'loading', 'success', 'error' TO-DO: Change this to constants or differents states
+  const [status, setStatus] = useState(statuses.LOADING);
   const [message, setMessage] = useState("");
   const [token, setToken] = useState(null);
-  const [isTokenExtracted, setIsTokenExtracted] = useState(false); // Track token extraction
+  const [isTokenExtracted, setIsTokenExtracted] = useState(false);
+  const { t } = useTranslation();
 
   // Extract token from the query parameters
   useEffect(() => {
@@ -17,18 +20,17 @@ export default function MailVerification() {
     setIsTokenExtracted(true); // Mark token extraction as complete
   }, []);
 
-  // Handle verification API call
   const handleVerification = async (token) => {
     try {
       const result = await getVerify({ token });
       if (result) {
-        setStatus("success");
-        setMessage("Your email has been successfully verified!");
+        setStatus(statuses.SUCCESS);
+        setMessage(t("VerificationPage.successMessage"));
       }
     } catch (error) {
-      setStatus("error");
+      setStatus(statuses.ERROR);
       setMessage(
-        error.response?.data?.message || "An error occurred. Please try again."
+        error.response?.data?.message || t("VerificationPage.errorMessage")
       );
     }
   };
@@ -39,35 +41,47 @@ export default function MailVerification() {
       if (token) {
         handleVerification(token);
       } else {
-        setStatus("error");
-        setMessage("Invalid or missing verification token.");
+        setStatus(statuses.ERROR);
+        setMessage(t("VerificationPage.errorMessage"));
       }
     }
   }, [token, isTokenExtracted]);
 
-  //Change styles becasuse pls
   return (
     <section className="center-container">
-      <div className="verification-box">
-        {status === "loading" && <p className="status-message">Verifying...</p>}
+      <div className="verification-box   bg-white">
+        <img src={"/logo1.png"} alt="logo" width={400} height={400} />
 
-        {status === "success" && (
-          <div className="text-center">
-            <h1 className="success-message">Verification Complete!</h1>
+        {status === statuses.LOADING && (
+          <p className="status-message">{t("VerificationPage.loading")}</p>
+        )}
+
+        {status === statuses.SUCCESS && (
+          <div className="items-center  flex flex-col gap-3 w-full">
+            <h1 className="success-message">{t("VerificationPage.success")}</h1>
+            <img src={"/divider-5318234.svg"} width={350} height={10} />
             <p className="status-message">{message}</p>
-            <Link href="/" className="link-button">
-              Go Home
-            </Link>
+            <section className="flex justify-evenly p-4 bg-origins w-full">
+              <Link href="/" className="link-button">
+                {t("goHome")}
+              </Link>
+            </section>
           </div>
         )}
 
-        {status === "error" && (
-          <div className="text-center">
-            <h1 className="error-message">Verification Failed</h1>
+        {status === statuses.ERROR && (
+          <div className="items-center  flex flex-col gap-3 w-full">
+            <h1 className="error-message">{t("VerificationPage.fail")}</h1>
+            <img src={"/divider-5318234.svg"} width={350} height={10} />
             <p className="status-message">{message}</p>
-            <Link href="/register" className="link-button">
-              Try Again
-            </Link>
+            <section className="flex justify-evenly p-4 bg-origins w-full">
+              <Link
+                href="/register"
+                className="p-2 text-2xl text-center Button"
+              >
+                {t("tryAgain")}
+              </Link>
+            </section>
           </div>
         )}
       </div>

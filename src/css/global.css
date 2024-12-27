@@ -65,12 +65,12 @@
   }
 
   .verification-box {
-    @apply bg-white shadow-lg rounded-lg flex flex-col items-center justify-center;
-    width: 40vw; /* Tailwind doesn't support direct viewport units, so this is custom */
-    height: 60vh;
+    @apply bg-white shadow-lg flex flex-col items-center justify-center justify-around border-8 border-background;
+    width: 400px; 
+    height: 650px;
   }
 
   .center-container {
-    @apply flex items-center justify-center min-h-screen bg-gray-200;
+    @apply flex items-center justify-center min-h-screen;
   }
 }

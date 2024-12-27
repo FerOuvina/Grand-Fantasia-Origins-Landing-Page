@@ -11,11 +11,7 @@ export default {
         background: "#b6b09a",
         navbar: "#4e4b44",
         button: "#ebebec",
-        green: {
-          500: "#22c55e", // Default Tailwind green
-          600: "#16a34a", // Default Tailwind green hover
-        },
-        white: "#dbd8cd", // Custom white
+        white: "#dbd8cd",
       },
     },
   },
