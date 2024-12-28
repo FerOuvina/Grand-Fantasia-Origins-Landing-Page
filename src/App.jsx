@@ -5,7 +5,7 @@ import PatchNotes from "./components/patchNotes";
 
 import { Route } from "wouter";
 import "./App.css";
-import MailVerification from "./pages/MailVerificaton";
+import MailVerification from "./pages/mailVerification";
 
 function App() {
   return (
