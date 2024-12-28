@@ -104,5 +104,7 @@
     "loading": "Verificando",
     "successMessage": "Your email has been successfully verified!",
     "errorMessage": "Ocurrio un error. Por favor vuelva a intentar."
-  }
+  },
+  "registrationSuccessful": "Su registro ha sido exitoso",
+  "checkYourEmail": "Por favor revise su correo para confirmar su cuenta"
 }

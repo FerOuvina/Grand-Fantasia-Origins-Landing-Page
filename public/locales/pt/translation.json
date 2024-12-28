@@ -97,12 +97,14 @@
   "passwordErrorSymbol": "A senha deve conter pelo menos um símbolo",
   "passwordErrorNumber": "A senha deve conter pelo menos um número",
   "goHome": "Ir para Casa",
-  "tryAgain":"Tente Novamente",
-  "VerificationPage":{
+  "tryAgain": "Tente Novamente",
+  "VerificationPage": {
     "success": "Verificação Concluída!",
     "fail": "Falha na Verificação",
     "loading": "Verificando",
     "successMessage": "Your email has been successfully verified!",
     "errorMessage": "An error occurred. Please try again."
-  }
+  },
+  "registrationSuccessful": "Seu registro foi encerrado",
+  "checkYourEmail": "Por favor, revise seu e-mail para confirmar sua conta"
 }

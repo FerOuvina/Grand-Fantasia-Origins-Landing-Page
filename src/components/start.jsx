@@ -8,6 +8,7 @@ import MobileNavbar from './mobileNavbar';
 export default function Start() {
   return (
     <>
+      <MobileNavbar />
       <Navbar />
       <Home />
       <section className='flex flex-col w-full max-w-[1250px] border-8 border-white bg-background'>
