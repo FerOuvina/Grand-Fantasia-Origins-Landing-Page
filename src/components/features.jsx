@@ -118,7 +118,7 @@ export default function Features() {
 
       <article className='flex md:gap-10 justify-center px-3 py-5 mt-4 w-full bg-white'>
         {/* Buttons */}
-        <ul className='hidden md:flex flex-col justify-between'>
+        <ul className='hidden lg:flex flex-col justify-between'>
           {images.map((image, index) => (
             <li
               key={index}

@@ -9,11 +9,11 @@ import MailVerification from "./pages/MailVerificaton";
 
 function App() {
   return (
-    <main className="flex flex-col justify-center items-center bg-green">
+    <main className="flex flex-col justify-center items-center bg-pageGreen">
       <Route path="/" component={Start} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/patchNotes" component={PatchNotes}></Route>
+      <Route path="/patchNotes" component={PatchNotes} />
       <Route path="/verify" component={MailVerification} />
     </main>
   );
