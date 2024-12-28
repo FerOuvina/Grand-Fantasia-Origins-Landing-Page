@@ -95,5 +95,14 @@
   "usernameRegister": "Nome de usuário",
   "usernameRegisterError": "Nome de usuário obrigatório",
   "passwordErrorSymbol": "A senha deve conter pelo menos um símbolo",
-  "passwordErrorNumber": "A senha deve conter pelo menos um número"
+  "passwordErrorNumber": "A senha deve conter pelo menos um número",
+  "goHome": "Ir para Casa",
+  "tryAgain":"Tente Novamente",
+  "VerificationPage":{
+    "success": "Verificação Concluída!",
+    "fail": "Falha na Verificação",
+    "loading": "Verificando",
+    "successMessage": "Your email has been successfully verified!",
+    "errorMessage": "An error occurred. Please try again."
+  }
 }

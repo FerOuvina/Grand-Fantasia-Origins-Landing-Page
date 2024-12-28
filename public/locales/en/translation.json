@@ -95,5 +95,14 @@
   "usernameRegister": "Username",
   "usernameRegisterError": "Username is required",
   "passwordErrorSymbol": "Password must contain at least one symbol",
-  "passwordErrorNumber": "Password must contain at least one number"
+  "passwordErrorNumber": "Password must contain at least one number",
+  "goHome": "Go Home",
+  "tryAgain":"Try Again",
+  "VerificationPage":{
+    "success": "Verification Complete!",
+    "fail": "Verification Failed",
+    "loading": "Verifying",
+    "successMessage": "Your email has been successfully verified!",
+    "errorMessage": "An error occurred. Please try again."
+  }
 }
