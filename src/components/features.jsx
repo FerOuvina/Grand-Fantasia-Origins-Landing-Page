@@ -116,9 +116,9 @@ export default function Features() {
         {t('FEATURES')}
       </h1>
 
-      <article className='flex gap-10 justify-center px-3 py-5 mt-4 w-full bg-white'>
+      <article className='flex md:gap-10 justify-center px-3 py-5 mt-4 w-full bg-white'>
         {/* Buttons */}
-        <ul className='flex flex-col justify-between'>
+        <ul className='hidden md:flex flex-col justify-between'>
           {images.map((image, index) => (
             <li
               key={index}
@@ -145,7 +145,7 @@ export default function Features() {
               key={index}
               className={`image ${
                 currentIndex === index ? 'flex' : 'hidden'
-              } max-h-fit`}
+              } max-h-fit flex-col md:flex-row`}
               id={`image-${index}`}
             >
               <img src={image} alt={`Image ${index + 1}`} width={400} />

@@ -10,7 +10,7 @@ export default function NewsCard({
   linkText
 }) {
   return (
-    <section className='w-full flex-col max-w-[400] flex border-8 border-white bg-white'>
+    <section className='w-full flex-col md:max-w-[400] flex border-8 border-white bg-white'>
       <img
         src={image}
         alt={title}

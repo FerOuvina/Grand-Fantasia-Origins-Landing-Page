@@ -15,24 +15,33 @@ export default function ClassesCard({
       <article className='flex'>
         <div className='flex flex-col justify-evenly'>
           <ul className='flex flex-col gap-6 justify-center'>
-            <li className='self-center text-5xl'>{job}</li>
-            <li className='self-center'>
+            <li className='self-center text-3xl md:text-5xl'>{job}</li>
+            <li className='self-center hidden md:inline-block'>
               <img src={'/divider-5318234.svg'} width={350} height={10} />
             </li>
-            <ul className='flex gap-20 justify-evenly text-2xl'>
+            <li className='self-center md:hidden'>
+              <img src={'/divider-5318234.svg'} width={280} height={10} />
+            </li>
+            <ul className='flex px-4 gap-5 md:gap-20 justify-evenly text-2xl'>
               <li>{path1}</li>
               <li>{path2}</li>
             </ul>
           </ul>
-          <div className='flex flex-col gap-2 bg-navbar border-8 text-white border-white px-4 py-1 text-lg'>
+          <div className='flex flex-col gap-2 bg-navbar border-8 text-white border-white mx-4 md:mx-0 px-4 py-1 md:text-lg text-md'>
             <span>
               {t('Hometown')}: {hometown}
             </span>
-            <p>{description}</p>
+            <p className=''>{description}</p>
           </div>
         </div>
 
-        <img src={image} alt={job} width={300} height={500} />
+        <img
+          src={image}
+          alt={job}
+          width={300}
+          height={500}
+          className='hidden md:flex'
+        />
       </article>
     </section>
   );

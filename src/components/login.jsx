@@ -1,8 +1,9 @@
 import Footer from './footer';
-import NavbarSecondary from './navbarSecundary';
 import DiscordWidget from './discordWidget';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import NavbarSecondary from './navbarSecundary';
+import MobileNavbar from './mobileNavbar';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../css/navbar.css';
@@ -78,11 +79,16 @@ export default function Login() {
 
   return (
     <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-full'>
-      <NavbarSecondary />
-      <article className='my-5 w-full border-8 border-white bg-background'>
+      <div className='hidden md:inline-block w-full'>
+        <NavbarSecondary />
+      </div>
+      <div className='inline-block md:hidden'>
+        <MobileNavbar />
+      </div>
+      <article className='my-5 px-2 md:px-0 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
           <div className='h-[300px] flex flex-col items-center my-4 border-8 border-white w-fit'>
-            <h1 className='px-4 py-2 w-full text-3xl text-white bg-navbar'>
+            <h1 className='px-4 py-2 w-full text-xl md:text-3xl text-white bg-navbar'>
               {t('loginTitle')}
             </h1>
 
@@ -90,9 +96,9 @@ export default function Login() {
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-xl text-white bg-navbar'
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-lg md:text-xl text-white bg-navbar'
             >
-              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+              <div className='grid relative grid-cols-2 gap-3 md:pr-2 w-full'>
                 <label htmlFor='usernameOrEmail' className='text-right'>
                   {t('usernameField')}
                 </label>
@@ -105,7 +111,7 @@ export default function Login() {
                   className='inputField'
                 />
               </div>
-              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+              <div className='grid relative grid-cols-2 gap-3 md:pr-2 w-full'>
                 <label htmlFor='password' className='text-right'>
                   {t('passwordField')}
                 </label>
@@ -118,18 +124,26 @@ export default function Login() {
                   className='inputField'
                 />
               </div>
-              <div className='grid grid-cols-2 gap-3 pr-4 mt-2 w-full'>
-                <button type='button' className='navbarButton'>
+              <div className='grid grid-cols-2 gap-3 md:pr-2 mt-2 w-full'>
+                <button
+                  type='button'
+                  className='navbarButton text-sm md:text-lg'
+                >
                   {t('forgotPassword')}
                 </button>
-                <button type='submit' className='navbarButton'>
+                <button
+                  type='submit'
+                  className='navbarButton text-sm md:text-lg'
+                >
                   {t('loginButton')}
                 </button>
               </div>
             </form>
           </div>
 
-          <DiscordWidget />
+          <div className='hidden md:inline-block'>
+            <DiscordWidget />
+          </div>
         </div>
       </article>
       <Footer />

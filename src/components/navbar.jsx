@@ -66,7 +66,7 @@ export default function Navbar() {
   };
 
   return (
-    <section className='flex flex-col w-full max-w-[1250px]'>
+    <section className='md:flex flex-col w-full hidden md:max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
         <Link href={'/register'} className='navbarButton'>
           <li>{t('Register')}</li>
@@ -94,8 +94,7 @@ export default function Navbar() {
                   <button
                     disabled={i18n.resolvedLanguage === 'en'}
                     onClick={() => handleLanguageChange('en')}
-                    className='p-2 w-full text-center rounded-t-lg cursor-pointer hover:bg-navbar hover:text-button'
-                  >
+                    className='p-2 w-full text-center rounded-t-lg cursor-pointer hover:bg-navbar hover:text-button'>
                     {t('English')}
                   </button>
                 </li>
@@ -103,8 +102,7 @@ export default function Navbar() {
                   <button
                     disabled={i18n.resolvedLanguage === 'es'}
                     onClick={() => handleLanguageChange('es')}
-                    className='p-2 w-full text-center cursor-pointer hover:bg-navbar hover:text-button'
-                  >
+                    className='p-2 w-full text-center cursor-pointer hover:bg-navbar hover:text-button'>
                     {t('Spanish')}
                   </button>
                 </li>
@@ -112,8 +110,7 @@ export default function Navbar() {
                   <button
                     disabled={i18n.resolvedLanguage === 'pt'}
                     onClick={() => handleLanguageChange('pt')}
-                    className='p-2 w-full text-center rounded-b-lg cursor-pointer hover:bg-navbar hover:text-button'
-                  >
+                    className='p-2 w-full text-center rounded-b-lg cursor-pointer hover:bg-navbar hover:text-button'>
                     {t('Portuguese')}
                   </button>
                 </li>
@@ -150,14 +147,12 @@ export default function Navbar() {
           </a>
           <a
             href={'#/classes'}
-            className='hover:underline hover:drop-shadow-lg'
-          >
+            className='hover:underline hover:drop-shadow-lg'>
             <li>{t('ClassesNav')}</li>
           </a>
           <a
             href={'#/features'}
-            className='hover:underline hover:drop-shadow-lg'
-          >
+            className='hover:underline hover:drop-shadow-lg'>
             <li>{t('FeaturesNav')}</li>
           </a>
           <ul className='flex gap-5 self-center'>
@@ -174,10 +169,7 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a
-                target='_blank'
-                href={'https://www.instagram.com/grand.fantasia.awakening/'}
-              >
+              <a target='_blank' href={'#'}>
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'

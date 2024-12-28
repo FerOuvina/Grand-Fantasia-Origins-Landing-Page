@@ -47,3 +47,36 @@
 .gray {
   filter: grayscale(90%);
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .archer {
+    background-image: url('/classes/archerbg.png');
+    background-repeat: no-repeat;
+    background-position: -15px;
+    background-position-y: -10px;
+    background-size: contain;
+  }
+
+  .mage {
+    background-image: url('/classes/magebg.png');
+    background-repeat: no-repeat;
+    background-position: -10px;
+    background-position-y: -25px;
+    background-size: contain;
+  }
+
+  .mechanic {
+    background-image: url('/classes/machinistbg.png');
+    background-repeat: no-repeat;
+    background-position: -10px;
+    background-position-y: -15px;
+    background-size: contain;
+  }
+
+  .traveler {
+    background-image: url('/classes/keymaster.png');
+    background-repeat: no-repeat;
+    background-position: -5px;
+    background-size: contain;
+  }
+}

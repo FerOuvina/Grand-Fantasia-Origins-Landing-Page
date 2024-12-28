@@ -4,6 +4,7 @@ import News from '../components/news';
 import Classes from '../components/classes';
 import Features from '../components/features';
 import Footer from '../components/footer';
+import MobileNavbar from './mobileNavbar';
 export default function Start() {
   return (
     <>

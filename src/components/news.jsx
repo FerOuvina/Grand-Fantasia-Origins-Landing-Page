@@ -13,7 +13,7 @@ export default function News() {
         {t('News')}
       </h1>
 
-      <article className='flex flex-row gap-4 justify-around my-4 w-full h-full'>
+      <article className='flex flex-col max-sm:w-80 md:flex-row gap-4 md:justify-around my-4 md:w-full md:h-full'>
         <NewsCard
           title={t('Title')}
           description={t('Description')}
