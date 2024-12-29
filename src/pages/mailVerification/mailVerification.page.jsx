@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import "../../css/global.css";
 import { getVerify } from "../../services/auth";
 import { useTranslation } from "react-i18next";
 import { statuses } from "../../helpers/constants";
+import "../../css/global.css";
 
 export default function MailVerification() {
   const [status, setStatus] = useState(statuses.LOADING);
@@ -50,7 +50,7 @@ export default function MailVerification() {
   return (
     <section className="center-container">
       <div className="verification-box   bg-white">
-        <img src={"/logo1.png"} alt="logo" width={400} height={400} />
+        <img src={"/logo.jpg"} alt="logo" width={400} height={400} />
 
         {status === statuses.LOADING && (
           <p className="status-message">{t("VerificationPage.loading")}</p>
@@ -62,7 +62,7 @@ export default function MailVerification() {
             <img src={"/divider-5318234.svg"} width={350} height={10} />
             <p className="status-message">{message}</p>
             <section className="flex justify-evenly p-4 bg-origins w-full">
-              <Link href="/" className="link-button">
+              <Link href="/" className="Button">
                 {t("goHome")}
               </Link>
             </section>

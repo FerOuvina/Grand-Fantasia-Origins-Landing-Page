@@ -4,6 +4,7 @@ import DiscordWidget from './discordWidget';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import MobileNavbar from './mobileNavbar';
+import Features2 from './Features2';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
@@ -241,6 +242,7 @@ export default function Register() {
           </div>
         </div>
       </article>
+      <Features2 />
       <Footer />
     </section>
   );

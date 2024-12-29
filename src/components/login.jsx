@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import NavbarSecondary from './navbarSecundary';
 import MobileNavbar from './mobileNavbar';
+import Features2 from './Features2';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../css/navbar.css';
@@ -139,6 +140,7 @@ export default function Login() {
           </div>
         </div>
       </article>
+      <Features2 />
       <Footer />
     </section>
   );
