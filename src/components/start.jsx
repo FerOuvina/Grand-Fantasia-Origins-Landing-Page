@@ -61,24 +61,45 @@ export default function Start() {
 
       {/* Back to Top Button */}
       {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className='fixed bottom-5 right-5 p-4 bg-navbar text-white rounded-full shadow-lg hover:bg-button hover:text-black transition duration-300 flex items-center justify-center'
-          aria-label='Scroll to top'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={2}
-            stroke='currentColor'
-            className='w-6 h-6'>
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M5 15l7-7 7 7'
-            />
-          </svg>
-        </button>
+        <div>
+          <button
+            onClick={scrollToTop}
+            className='hidden fixed bottom-5 right-5 p-4 bg-origins text-white rounded-full shadow-lg hover:bg-button hover:text-black transition duration-300 md:flex items-center justify-center'
+            aria-label='Scroll to top'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={2}
+              stroke='currentColor'
+              className='md:w-6 md:h-6 w-3'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M5 15l7-7 7 7'
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={scrollToTop}
+            className='fixed md:hidden bottom-5 left-5 p-4 bg-origins text-white rounded-full shadow-lg hover:bg-button hover:text-black transition duration-300 flex items-center justify-center'
+            aria-label='Scroll to top'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={2}
+              stroke='currentColor'
+              className='md:w-6 md:h-6 w-3'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M5 15l7-7 7 7'
+              />
+            </svg>
+          </button>
+        </div>
       )}
     </>
   );

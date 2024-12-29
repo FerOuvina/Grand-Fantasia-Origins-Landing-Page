@@ -79,12 +79,8 @@ export default function Login() {
 
   return (
     <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-full'>
-      <div className='hidden md:inline-block w-full'>
-        <NavbarSecondary />
-      </div>
-      <div className='inline-block md:hidden'>
-        <MobileNavbar />
-      </div>
+      <NavbarSecondary />
+      <MobileNavbar />
       <article className='my-4 px-2 md:px-0 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
           <div className='h-[314px] flex flex-col items-center my-4 border-8 border-white w-fit'>
@@ -96,8 +92,7 @@ export default function Login() {
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-lg md:text-xl text-white bg-origins'
-            >
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-lg md:text-xl text-white bg-origins'>
               <div className='grid relative grid-cols-2 gap-3 md:pr-2 w-full'>
                 <label htmlFor='usernameOrEmail' className='text-right'>
                   {t('usernameField')}
@@ -127,14 +122,12 @@ export default function Login() {
               <div className='grid grid-cols-2 gap-3 md:pr-2 mt-2 w-full'>
                 <button
                   type='button'
-                  className='navbarButton text-sm md:text-lg'
-                >
+                  className='navbarButton text-sm md:text-lg'>
                   {t('forgotPassword')}
                 </button>
                 <button
                   type='submit'
-                  className='navbarButton text-sm md:text-lg'
-                >
+                  className='navbarButton text-sm md:text-lg'>
                   {t('loginButton')}
                 </button>
               </div>

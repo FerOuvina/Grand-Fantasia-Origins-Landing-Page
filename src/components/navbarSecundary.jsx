@@ -66,7 +66,7 @@ export default function NavbarSecondary() {
   };
 
   return (
-    <section className='flex flex-col w-full max-w-[1250px]'>
+    <section className='hidden md:flex flex-col w-full max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
         <Link href={'/register'} className='navbarButton'>
           <li>{t('Register')} ▷</li>

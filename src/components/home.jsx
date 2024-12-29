@@ -1,17 +1,19 @@
+import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
 export default function Home() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { type: 'image', src: '/Showcase1.png', alt: 'Image 1' },
+    { type: 'image', src: '/HuntingShowcase.gif', alt: 'Image 1' },
     { type: 'image', src: '/Housing.gif', alt: 'Image 2' },
     {
       type: 'video',
       src: 'https://www.youtube.com/embed/-WGNOIzajds?si=A9wwuGQWjyHLy5jq&amp;controls=0',
       alt: 'Video'
     },
-    { type: 'image', src: '/path-to-image3.jpg', alt: 'Image 3' }
+    { type: 'image', src: '/MiningShowcase.gif', alt: 'Image 3' }
   ];
 
   const handleSlideChange = (index) => {
@@ -27,14 +29,14 @@ export default function Home() {
   };
 
   return (
-    <section className='flex flex-row max-w-[1250px] bg-background border-8 border-white my-4 p-4'>
+    <section className='md:flex md:flex-row max-w-[1250px] bg-background border-8 border-white my-4 p-4'>
       {/* Slideshow Section */}
-      <article className='hidden md:flex w-6/12 shadow-lg border-8 border-white relative'>
+      <article className='hidden lg:flex lg:w-6/12 shadow-lg border-8 border-white relative'>
         {slides[currentSlide].type === 'image' ? (
           <img
             src={slides[currentSlide].src}
             alt={slides[currentSlide].alt}
-            className='w-full h-[372px] object-cover'
+            className='w-full h-[388px] object-cover'
           />
         ) : (
           <iframe
@@ -43,7 +45,7 @@ export default function Home() {
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
             referrerPolicy='strict-origin-when-cross-origin'
             allowFullScreen
-            className='w-full h-full'></iframe>
+            className='w-full h-[388px]'></iframe>
         )}
 
         {/* Navigation Arrows */}
@@ -72,29 +74,47 @@ export default function Home() {
       </article>
 
       {/* Text Content */}
-      <article className='p-4 bg-white w-8/12 shadow-lg border-8 border-white'>
+      <article className='bg-white lg:w-8/12 shadow-lg border-8 border-white'>
         <ul className='text-xl'>
-          <li className=''>
-            • A new path for the Sprite Messenger to choose: Duskwraith, which
-            later can choose between: Soul Reaver or Dark Knight.
+          <li>
+            <h1 className='text-3xl text-center font-bold'>
+              {' '}
+              {t('HomeTitle')}
+            </h1>
+            <h2 className='text-2xl pt-1 text-center'>{t('HomeSubtitle')}</h2>
           </li>
           <li className='pt-2'>
-            • The server is focused on an experience similar to the early days
-            of Grand Fantasia. With renewed and new content.
+            • <span className='font-bold'>{t('HomeItem1B1')}</span>
+            {t('HomeItem1N1')}
+            <span className='font-bold'>{t('HomeItem1B2')}</span>
+            {t('HomeItem1N2')}
+            <span className='font-bold'>{t('HomeItem1B3')}</span>{' '}
+            {t('HomeItem1N3')}
+            <span className='font-bold'>{t('HomeItem1B4')}</span>
           </li>
           <li className='pt-2'>
-            • Lvl caps every 10 levels, starting at lvl cap 30.
+            • {t('HomeItem2N1')}
+            <span className='font-bold'>{t('HomeItem2B1')}</span>
+            {t('HomeItem2N2')}
           </li>
           <li className='pt-2'>
-            • The server is both PvP and PvE, with content focused on both
-            modes. To encourage people to join the PvP arena, many useful
-            rewards have been implemented. (exclusive dungeon mounts - genkis -
-            and more).
+            • {t('HomeItem3N1')}
+            <span className='font-bold'>{t('HomeItem3B1')}</span>
+            {t('HomeItem3N2')}
           </li>
-          <li className='pt-2'>
-            • New dungeons with increased difficulty for each level cap (Angor
-            Quarry lvl 30 - Branda Root lvl 40). New dungeons will be unlocked
-            with the following caps.
+          <li className='py-2'>
+            • {t('HomeItem4N1')}
+            <span className='font-bold'>{t('HomeItem4B1')}</span>
+            {t('HomeItem4N2')}
+          </li>
+          <li className='lg:hidden'>
+            <iframe
+              src='https://www.youtube.com/embed/-WGNOIzajds?si=A9wwuGQWjyHLy5jq&amp;controls=0'
+              title='Slide video'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              referrerPolicy='strict-origin-when-cross-origin'
+              allowFullScreen
+              className='w-full h-[250px] md:h-[350px]'></iframe>
           </li>
         </ul>
       </article>

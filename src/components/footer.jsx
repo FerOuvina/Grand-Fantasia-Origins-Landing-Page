@@ -8,10 +8,10 @@ export default function Footer() {
   return (
     <footer className='flex flex-col w-full bg-white max-w-[1250px]'>
       <section className='flex justify-evenly p-4 bg-origins'>
-        <Link href={'/register'} className='p-2 text-2xl text-center Button'>
+        <Link href={'/register'} className='p-2 text-xl text-center Button'>
           {t('Register')}
         </Link>
-        <a href={'#'} className='p-2 text-2xl text-center Button'>
+        <a href={'#'} className='p-2 text-xl text-center Button'>
           {t('Download')}
         </a>
       </section>
@@ -26,7 +26,7 @@ export default function Footer() {
               <img src={'/logo.jpg'} alt='Random' width={50} height={50} />
             </a>
           </li>
-          <li className='text-[10px] md:text-lg'>{t('Copyright')}</li>
+          <li className='text-[8px] md:text-lg'>{t('Copyright')}</li>
           <ul className='hidden md:flex gap-5'>
             <li>
               <a target='_blank' href={'https://discord.gg/DUpgWc9Gg5'}>

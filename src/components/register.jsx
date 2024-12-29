@@ -3,6 +3,7 @@ import NavbarSecondary from './navbarSecundary';
 import DiscordWidget from './discordWidget';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import MobileNavbar from './mobileNavbar';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
@@ -157,11 +158,12 @@ export default function Register() {
   };
 
   return (
-    <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-auto'>
+    <section className='flex flex-col w-full md:max-w-[1250px] justify-center items-center bg-green h-auto'>
       <NavbarSecondary />
-      <article className='my-4 w-full border-8 border-white bg-background'>
+      <MobileNavbar />
+      <article className='my-4 px-2 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
-          <div className='h-[313.4px] flex flex-col items-center my-4 border-8 border-white w-fit'>
+          <div className='md:h-[313.4px] flex flex-col items-center my-4 border-8 border-white w-fit'>
             <h1 className='px-4 py-2 w-full text-3xl text-white bg-origins'>
               {t('registerTitle')}
             </h1>
@@ -170,8 +172,8 @@ export default function Register() {
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full text-xl text-white bg-origins'>
-              <div className='grid relative grid-cols-2 gap-3 pr-4 mt-2 w-full'>
+              className='flex flex-col gap-3 justify-center items-center md:px-4 py-2 w-full text-xl text-white bg-origins'>
+              <div className='grid relative grid-cols-2 gap-3 px-1 md:px-0 md:pr-4 mt-2 w-full'>
                 <label htmlFor='username' className='text-right'>
                   {t('usernameRegister')}
                 </label>
@@ -184,7 +186,7 @@ export default function Register() {
                   className='inputField'
                 />
               </div>
-              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+              <div className='grid relative grid-cols-2 gap-3 px-1 md:px-0 md:pr-4 w-full'>
                 <label htmlFor='email' className='text-right'>
                   {t('emailField')}
                 </label>
@@ -197,7 +199,7 @@ export default function Register() {
                   className='inputField'
                 />
               </div>
-              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+              <div className='grid relative grid-cols-2 gap-3 px-1 md:px-0 md:pr-4 w-full'>
                 <label htmlFor='password' className='text-right'>
                   {t('passwordField')}
                 </label>
@@ -210,7 +212,7 @@ export default function Register() {
                   className='inputField'
                 />
               </div>
-              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+              <div className='grid relative grid-cols-2 gap-3 px-1 md:px-0 md:pr-4 w-full'>
                 <label htmlFor='confirmPassword' className='text-right'>
                   {t('confirmPasswordField')}
                 </label>
@@ -223,7 +225,7 @@ export default function Register() {
                   className='inputField'
                 />
               </div>
-              <div className='grid grid-cols-2 gap-3 pr-4 mt-2 w-full'>
+              <div className='grid grid-cols-2 gap-3  px-1 md:px-0 md:pr-4 mt-2 w-full'>
                 <Link href='/login' className='navbarButton text-center'>
                   {t('loginButton')}
                 </Link>
