@@ -85,10 +85,10 @@ export default function Login() {
       <div className='inline-block md:hidden'>
         <MobileNavbar />
       </div>
-      <article className='my-5 px-2 md:px-0 w-full border-8 border-white bg-background'>
+      <article className='my-4 px-2 md:px-0 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
-          <div className='h-[300px] flex flex-col items-center my-4 border-8 border-white w-fit'>
-            <h1 className='px-4 py-2 w-full text-xl md:text-3xl text-white bg-navbar'>
+          <div className='h-[314px] flex flex-col items-center my-4 border-8 border-white w-fit'>
+            <h1 className='px-4 py-2 w-full text-xl md:text-3xl text-white bg-origins'>
               {t('loginTitle')}
             </h1>
 
@@ -96,7 +96,7 @@ export default function Login() {
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-lg md:text-xl text-white bg-navbar'
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-lg md:text-xl text-white bg-origins'
             >
               <div className='grid relative grid-cols-2 gap-3 md:pr-2 w-full'>
                 <label htmlFor='usernameOrEmail' className='text-right'>

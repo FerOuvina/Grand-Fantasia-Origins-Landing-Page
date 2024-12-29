@@ -69,7 +69,7 @@ export default function NavbarSecondary() {
     <section className='flex flex-col w-full max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
         <Link href={'/register'} className='navbarButton'>
-          <li>{t('Register')}</li>
+          <li>{t('Register')} ▷</li>
         </Link>
         <Link href={'/login'} className='navbarButton'>
           <li>{t('Login')}</li>
@@ -77,7 +77,7 @@ export default function NavbarSecondary() {
         <li className='relative' ref={dropdownRef}>
           <button onClick={toggleDropdown} className='flex gap-2 navbarButton'>
             <img
-              src='/logo.jpg'
+              src='globe.svg'
               alt='globe'
               width={20}
               height={20}
@@ -94,8 +94,7 @@ export default function NavbarSecondary() {
                   <button
                     disabled={i18n.resolvedLanguage === 'en'}
                     onClick={() => handleLanguageChange('en')}
-                    className='p-2 w-full text-center rounded-t-lg cursor-pointer hover:bg-navbar hover:text-button'
-                  >
+                    className='p-2 w-full text-center rounded-t-lg cursor-pointer hover:bg-navbar hover:text-button'>
                     {t('English')}
                   </button>
                 </li>
@@ -103,8 +102,7 @@ export default function NavbarSecondary() {
                   <button
                     disabled={i18n.resolvedLanguage === 'es'}
                     onClick={() => handleLanguageChange('es')}
-                    className='p-2 w-full text-center cursor-pointer hover:bg-navbar hover:text-button'
-                  >
+                    className='p-2 w-full text-center cursor-pointer hover:bg-navbar hover:text-button'>
                     {t('Spanish')}
                   </button>
                 </li>
@@ -112,8 +110,7 @@ export default function NavbarSecondary() {
                   <button
                     disabled={i18n.resolvedLanguage === 'pt'}
                     onClick={() => handleLanguageChange('pt')}
-                    className='p-2 w-full text-center rounded-b-lg cursor-pointer hover:bg-navbar hover:text-button'
-                  >
+                    className='p-2 w-full text-center rounded-b-lg cursor-pointer hover:bg-navbar hover:text-button'>
                     {t('Portuguese')}
                   </button>
                 </li>
@@ -124,23 +121,18 @@ export default function NavbarSecondary() {
         {/* End Dropdown */}
 
         <Link href={'#'} className='navbarButton'>
-          <li>{t('Download')}</li>
+          <li>{t('Download')} &#x1f4e5;&#xfe0e;</li>
         </Link>
       </ul>
 
       {/* Second Navbar */}
-      <ul className='flex gap-10 justify-between items-center navbarSecondary'>
-        <Link href={'/'}>
-          <li>
-            <img
-              src={'/logo.jpg'}
-              alt='logo'
-              width={100}
-              height={100}
-              className='rounded-full'
-            />
-          </li>
-        </Link>
+      <ul className='flex gap-10 relative justify-between items-center navbarSecondary h-16'>
+        <div className='absolute'>
+          <Link href={'/'}>
+            <img src={'/logo.jpg'} alt='logo' width={200} height={200} />
+          </Link>
+        </div>
+
         <ul className='flex gap-10 justify-center w-full text-2xl'>
           <Link href={'/'} className='hover:underline hover:drop-shadow-lg'>
             <li>{t('HomeNav')}</li>
@@ -150,14 +142,12 @@ export default function NavbarSecondary() {
           </Link>
           <Link
             href={'/#classes'}
-            className='hover:underline hover:drop-shadow-lg'
-          >
+            className='hover:underline hover:drop-shadow-lg'>
             <li>{t('ClassesNav')}</li>
           </Link>
           <Link
             href={'/#features'}
-            className='hover:underline hover:drop-shadow-lg'
-          >
+            className='hover:underline hover:drop-shadow-lg'>
             <li>{t('FeaturesNav')}</li>
           </Link>
           <ul className='flex gap-5 self-center'>
@@ -176,8 +166,7 @@ export default function NavbarSecondary() {
             <li>
               <a
                 target='_blank'
-                href={'https://www.instagram.com/grand.fantasia.awakening/'}
-              >
+                href={'https://www.instagram.com/grand.fantasia.awakening/'}>
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'

@@ -23,25 +23,6 @@ export default function Register() {
   const confirmPasswordError = t('confirmPasswordError');
   const validationError = t('validationError');
 
-  const showRegisterValid = async () => {
-    try {
-      const result = await postRegister(formData);
-
-      // Show success message with SweetAlert
-      MySwal.fire({
-        icon: 'success',
-        title: t('registrationSuccessful'),
-        text: t('thankYouForRegistering'),
-        position: 'center',
-        showConfirmButton: true,
-        timer: 6000, // Modal will last 6 seconds
-        timerProgressBar: true
-      });
-    } catch (error) {
-      console.error('Error:', error.response?.data || error.message);
-    }
-  };
-
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -131,11 +112,23 @@ export default function Register() {
     try {
       const result = await postRegister(formData);
 
-      // Show success message with SweetAlert
+      if (result.error) {
+        MySwal.fire({
+          icon: 'error',
+          title: t('registrationFailed'),
+          text: result.error || t('tryAgainLater'),
+          position: 'center',
+          showConfirmButton: true,
+          timer: 15000,
+          timerProgressBar: true
+        });
+        return;
+      }
+
       MySwal.fire({
         icon: 'success',
-        title: t('registrationSuccessful'),
-        text: t('checkYourEmail'),
+        title: t('checkYourEmail'),
+        text: t('thankYouForRegistering'),
         position: 'center',
         showConfirmButton: true,
         timer: 6000,
@@ -143,6 +136,13 @@ export default function Register() {
       });
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
+      MySwal.fire({
+        icon: 'error',
+        title: t('unexpectedError'),
+        text: t('tryAgainLater'),
+        position: 'center',
+        showConfirmButton: true
+      });
     }
   };
 
@@ -157,12 +157,12 @@ export default function Register() {
   };
 
   return (
-    <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-full'>
+    <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-auto'>
       <NavbarSecondary />
-      <article className='my-5 w-full border-8 border-white bg-background'>
+      <article className='my-4 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
           <div className='h-[313.4px] flex flex-col items-center my-4 border-8 border-white w-fit'>
-            <h1 className='px-4 py-2 w-full text-3xl text-white bg-navbar'>
+            <h1 className='px-4 py-2 w-full text-3xl text-white bg-origins'>
               {t('registerTitle')}
             </h1>
 
@@ -170,7 +170,7 @@ export default function Register() {
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full text-xl text-white bg-navbar'>
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full text-xl text-white bg-origins'>
               <div className='grid relative grid-cols-2 gap-3 pr-4 mt-2 w-full'>
                 <label htmlFor='username' className='text-right'>
                   {t('usernameRegister')}

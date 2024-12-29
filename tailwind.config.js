@@ -8,11 +8,11 @@ export default {
         hojas: '#736230',
         gf: '#5b380a',
         origins: '#57505c',
-        background: '#b6b09a',
-        navbar: '#4e4b44',
+        background: '#af8d77',
+        navbar: '#7a291e',
         button: '#ebebec',
-        white: '#dbd8cd',
-        pageGreen: '#819a63'
+        white: '#dbd5c2',
+        pageGreen: '#351410'
       }
     }
   },

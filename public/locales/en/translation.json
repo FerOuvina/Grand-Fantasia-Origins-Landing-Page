@@ -1,5 +1,5 @@
 {
-  "Register": "Sing Up",
+  "Register": "Sing Up!",
   "Login": "Login",
   "Language": "Language",
   "English": "English",
@@ -23,7 +23,7 @@
   "Description2": "Hey everyone, I'm leaving a quick survey so you can give us some feedback on the payment methods used in your countries. It's super brief, so I would appreciate it if you could fill it out even if you don't plan to spend money on the game. Thank you very much.",
   "link2": "https://forms.gle/SfiEKVSe3qUjQcgK9",
   "linkText2": "Survey Link",
-  "Classes": "Classes",
+  "Classes": "CLASSES",
   "HometownGS": "Unknown",
   "BERSERKER": "BERSERKER",
   "PALADIN": "PALADIN",
@@ -105,7 +105,9 @@
     "successMessage": "Your email has been successfully verified!",
     "errorMessage": "An error occurred. Please try again."
   },
-  "registrationSuccessful": "Registration successfull",
+  "checkYourEmail": "Please check your email to verify your account",
   "thankYouForRegistering": "Thank you for register to Grand Fantasia Awakening",
-  "checkYourEmail": "Please check your email to verify your account"
+  "registrationFailed": "There was an error with your request",
+  "tryAgainLater": "Please try again later",
+  "unexpectedError": "There was an unexpected error"
 }

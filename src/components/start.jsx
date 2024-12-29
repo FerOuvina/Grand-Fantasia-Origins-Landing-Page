@@ -6,6 +6,7 @@ import Classes from '../components/classes';
 import Features from '../components/features';
 import Footer from '../components/footer';
 import MobileNavbar from './mobileNavbar';
+import '../css/global.css';
 
 export default function Start() {
   const [isVisible, setIsVisible] = useState(false);

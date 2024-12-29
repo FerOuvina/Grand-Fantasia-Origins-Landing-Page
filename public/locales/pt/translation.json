@@ -1,5 +1,5 @@
 {
-  "Register": "Registrar-se",
+  "Register": "Registrar-se!",
   "Login": "Entrar",
   "Language": "Idioma",
   "English": "Inglês",
@@ -23,7 +23,7 @@
   "Description2": "Pessoal, estou deixando uma enquete para que nos deem um pouco de feedback sobre os métodos de pagamento utilizados em seus países. É super rápida, então ficaria muito agradecido se, mesmo sem intenção de gastar dinheiro no jogo, puderem respondê-la. Muito obrigado.",
   "link2": "https://forms.gle/5dnUkdEyzy5zDyzA6",
   "linkText2": "Link da pesquisa",
-  "Classes": "Aulas",
+  "Classes": "AULAS",
   "HometownGS": "Desconhecido",
   "BERSERKER": "BERSERKER",
   "PALADIN": "PALADINO",
@@ -105,6 +105,9 @@
     "successMessage": "Your email has been successfully verified!",
     "errorMessage": "An error occurred. Please try again."
   },
-  "registrationSuccessful": "Seu registro foi encerrado",
-  "checkYourEmail": "Por favor, revise seu e-mail para confirmar sua conta"
+  "checkYourEmail": "Por favor, verifique seu e-mail para verificar sua conta",
+  "thankYouForRegistering": "Obrigado por se registrar no Grand Fantasia Awakening",
+  "registrationFailed": "Houve um erro com sua solicitação",
+  "tryAgainLater": "Tente novamente mais tarde",
+  "unexpectedError": "Houve um erro inesperado"
 }

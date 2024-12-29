@@ -43,8 +43,7 @@ export default function Footer() {
             <li>
               <a
                 target='_blank'
-                href={'https://www.instagram.com/grand.fantasia.awakening/'}
-              >
+                href={'https://www.instagram.com/grand.fantasia.awakening/'}>
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'
@@ -85,8 +84,7 @@ export default function Footer() {
             <li>
               <a
                 target='_blank'
-                href={'https://www.instagram.com/grand.fantasia.awakening/'}
-              >
+                href={'https://www.instagram.com/grand.fantasia.awakening/'}>
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'

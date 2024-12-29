@@ -27,7 +27,7 @@ export default function ClassesCard({
               <li>{path2}</li>
             </ul>
           </ul>
-          <div className='flex flex-col gap-2 bg-navbar border-8 text-white border-white mx-4 md:mx-0 px-4 py-1 md:text-lg text-md'>
+          <div className='flex flex-col gap-2 bg-origins border-8 text-white border-white mx-4 md:mx-0 px-4 py-1 md:text-lg text-md'>
             <span>
               {t('Hometown')}: {hometown}
             </span>

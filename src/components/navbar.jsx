@@ -69,15 +69,15 @@ export default function Navbar() {
     <section className='md:flex flex-col w-full hidden md:max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
         <Link href={'/register'} className='navbarButton'>
-          <li>{t('Register')}</li>
+          <li>{t('Register')} ▷</li>
         </Link>
         <Link href={'/login'} className='navbarButton'>
-          <li>{t('Login')}</li>
+          <li>{t('Login')} </li>
         </Link>
         <li className='relative' ref={dropdownRef}>
           <button onClick={toggleDropdown} className='flex gap-2 navbarButton'>
             <img
-              src='/logo.jpg'
+              src='globe.svg'
               alt='globe'
               width={20}
               height={20}
@@ -121,23 +121,18 @@ export default function Navbar() {
         {/* End Dropdown */}
 
         <Link href={'#'} className='navbarButton'>
-          <li>{t('Download')}</li>
+          <li>{t('Download')} &#x1f4e5;&#xfe0e;</li>
         </Link>
       </ul>
 
       {/* Second Navbar */}
-      <ul className='flex gap-10 justify-between items-center navbarSecondary'>
-        <Link href={'/'}>
-          <li>
-            <img
-              src={'/logo.jpg'}
-              alt='logo'
-              width={100}
-              height={100}
-              className='rounded-full'
-            />
-          </li>
-        </Link>
+      <ul className='flex gap-10 relative justify-between items-center navbarSecondary h-16'>
+        <div className='absolute'>
+          <a href={'#'}>
+            <img src={'/logo.jpg'} alt='logo' width={200} height={200} />
+          </a>
+        </div>
+
         <ul className='flex gap-10 justify-center w-full text-2xl'>
           <Link href={'/'} className='hover:underline hover:drop-shadow-lg'>
             <li>{t('HomeNav')}</li>
@@ -169,7 +164,9 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a target='_blank' href={'#'}>
+              <a
+                target='_blank'
+                href={'https://www.instagram.com/grand.fantasia.awakening/'}>
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'
