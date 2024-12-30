@@ -11,7 +11,12 @@ export default function Footer() {
         <Link href={'/register'} className='p-2 text-xl text-center Button'>
           {t('Register')}
         </Link>
-        <a href={'#'} className='p-2 text-xl text-center Button'>
+        <a
+          href={
+            'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
+          }
+          target='_blank'
+          className='p-2 text-xl text-center Button'>
           {t('Download')}
         </a>
       </section>

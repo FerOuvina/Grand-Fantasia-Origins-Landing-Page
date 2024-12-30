@@ -111,9 +111,14 @@ export default function Navbar() {
               </ul>
             )}
           </div>
-          <Link href={'#'} className=''>
+          <a
+            href={
+              'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
+            }
+            target='_blank'
+            className=''>
             <li>{t('Download')}</li>
-          </Link>
+          </a>
         </ul>
       </ul>
 
@@ -170,9 +175,14 @@ export default function Navbar() {
         </li>
         {/* End Dropdown */}
 
-        <Link href={'#'} className='navbarButton'>
+        <a
+          href={
+            'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
+          }
+          target='_blank'
+          className='navbarButton'>
           <li>{t('Download')} &#x1f4e5;&#xfe0e;</li>
-        </Link>
+        </a>
       </ul>
 
       {/* Second Navbar */}
