@@ -127,7 +127,7 @@ export default function Register() {
         MySwal.fire({
           icon: 'error',
           title: t('registrationFailed'),
-          text: result.error || t('tryAgainLater'),
+          text: error.response ? error.response?.data?.error : t('tryAgainLater'),
           position: 'center',
           showConfirmButton: true,
           timer: 15000,
