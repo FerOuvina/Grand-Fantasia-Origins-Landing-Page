@@ -22,8 +22,8 @@ export default function MailVerification() {
 
   const handleVerification = async (token) => {
     try {
-      const result = await getVerify({ token });
-      if (result) {
+      const { data } = await getVerify({ token });
+      if (data) {
         setStatus(statuses.SUCCESS);
         setMessage(t("VerificationPage.successMessage"));
       }
