@@ -112,9 +112,18 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      const result = await postRegister(formData);
-
-      if (result.error) {
+      await postRegister(formData);
+      MySwal.fire({
+        icon: 'success',
+        title: t('checkYourEmail'),
+        text: t('thankYouForRegistering'),
+        position: 'center',
+        showConfirmButton: true,
+        timer: 6000,
+        timerProgressBar: true
+      });
+    } catch (error) {
+      if(error.response){
         MySwal.fire({
           icon: 'error',
           title: t('registrationFailed'),
@@ -126,18 +135,6 @@ export default function Register() {
         });
         return;
       }
-
-      MySwal.fire({
-        icon: 'success',
-        title: t('checkYourEmail'),
-        text: t('thankYouForRegistering'),
-        position: 'center',
-        showConfirmButton: true,
-        timer: 6000,
-        timerProgressBar: true
-      });
-    } catch (error) {
-      console.error('Error:', error.response?.data || error.message);
       MySwal.fire({
         icon: 'error',
         title: t('unexpectedError'),
