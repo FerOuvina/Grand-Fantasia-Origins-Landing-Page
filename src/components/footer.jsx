@@ -23,13 +23,13 @@ export default function Footer() {
       <section className='flex justify-center'>
         <ul className='flex justify-evenly items-center w-full'>
           <li>
-            <a href={'/'} className='hidden md:inline-block'>
+            <Link href={'/'} className='hidden md:inline-block'>
               <img src={'/logo.jpg'} alt='Random' width={100} height={100} />
-            </a>
+            </Link>
 
-            <a href={'/'} className='md:hidden inline-block'>
+            <Link href={'/'} className='md:hidden inline-block'>
               <img src={'/logo.jpg'} alt='Random' width={50} height={50} />
-            </a>
+            </Link>
           </li>
           <li className='text-[8px] md:text-lg'>{t('Copyright')}</li>
           <ul className='hidden md:flex gap-5'>

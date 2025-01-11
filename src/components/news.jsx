@@ -18,7 +18,7 @@ export default function News() {
           title={t('Title')}
           description={t('Description')}
           image={'/KissEmote.gif'}
-          date={'18/12/2024'}
+          date={'11/01/2025'}
           link={t('link')}
           linkText={t('linkText')}
         />
@@ -26,7 +26,7 @@ export default function News() {
           title={t('Title1')}
           description={t('Description1')}
           image={'/DancingGM.gif'}
-          date={'15/12/2024'}
+          date={'06/01/2025'}
           link={t('link1')}
           linkText={t('linkText1')}
         />
@@ -34,7 +34,7 @@ export default function News() {
           title={t('Title2')}
           description={t('Description2')}
           image={'/SuprisedEmote.gif'}
-          date={'12/12/12'}
+          date={'03/01/2025'}
           link={t('link2')}
           linkText={t('linkText2')}
         />
