@@ -24,11 +24,23 @@ export default function Footer() {
         <ul className='flex justify-evenly items-center w-full'>
           <li>
             <Link href={'/'} className='hidden md:inline-block'>
-              <img src={'/logo.jpg'} alt='Random' width={100} height={100} />
+              <img
+                src={'/logo.jpg'}
+                alt='Random'
+                width={100}
+                height={100}
+                loading='lazy'
+              />
             </Link>
 
             <Link href={'/'} className='md:hidden inline-block'>
-              <img src={'/logo.jpg'} alt='Random' width={50} height={50} />
+              <img
+                src={'/logo.jpg'}
+                alt='Random'
+                width={50}
+                height={50}
+                loading='lazy'
+              />
             </Link>
           </li>
           <li className='text-[8px] md:text-lg'>{t('Copyright')}</li>
@@ -42,6 +54,7 @@ export default function Footer() {
                   height={40}
                   title='discord'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -56,6 +69,7 @@ export default function Footer() {
                   height={40}
                   title='instagram'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -68,6 +82,7 @@ export default function Footer() {
                   height={40}
                   title='youtube'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -83,6 +98,7 @@ export default function Footer() {
                   height={20}
                   title='discord'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -97,6 +113,7 @@ export default function Footer() {
                   height={20}
                   title='instagram'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -109,6 +126,7 @@ export default function Footer() {
                   height={20}
                   title='youtube'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>

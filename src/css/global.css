@@ -65,8 +65,8 @@
   }
 
   .verification-box {
-    @apply bg-white shadow-lg flex flex-col items-center justify-center justify-around border-8 border-background;
-    width: 400px; 
+    @apply bg-white shadow-lg flex flex-col items-center justify-center border-8 border-background;
+    width: 400px;
     height: 650px;
   }
 

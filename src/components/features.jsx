@@ -83,13 +83,15 @@ export default function Features() {
     if (isAnimating.current) return;
 
     isAnimating.current = true;
-    gsap.to('.image', {
-      display: 'none',
-      duration: 0,
-      opacity: 0,
-      ease: 'power2.in'
-    });
-    setCurrentIndex(index);
+    setTimeout(() => {
+      gsap.to('.image', {
+        display: 'none',
+        duration: 0,
+        opacity: 0,
+        ease: 'power2.in'
+      });
+      setCurrentIndex(index);
+    }, 1);
     gsap.to(`#image-${index}`, {
       display: 'flex',
       duration: 1,
@@ -125,14 +127,14 @@ export default function Features() {
               className={`cursor-pointer ${
                 currentIndex === index ? '' : 'gray'
               }`}
-              onClick={() => swapImage(index)}
-            >
+              onClick={() => swapImage(index)}>
               <img
                 src={image}
                 alt={`Image ${index + 1}`}
                 width={70}
                 height={70}
                 className='border-8 border-button'
+                loading='lazy'
               />
             </li>
           ))}
@@ -146,9 +148,13 @@ export default function Features() {
               className={`image ${
                 currentIndex === index ? 'flex' : 'hidden'
               } max-h-fit flex-col md:flex-row`}
-              id={`image-${index}`}
-            >
-              <img src={image} alt={`Image ${index + 1}`} width={400} />
+              id={`image-${index}`}>
+              <img
+                src={image}
+                alt={`Image ${index + 1}`}
+                width={400}
+                loading='lazy'
+              />
               <p className='p-4 max-w-lg bg-button'>{texts[index]}</p>
             </li>
           ))}

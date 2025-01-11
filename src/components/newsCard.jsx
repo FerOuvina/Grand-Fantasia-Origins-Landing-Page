@@ -17,6 +17,7 @@ export default function NewsCard({
         width={400}
         height={200}
         className='self-center w-full'
+         loading='lazy'
       />
       <div className='flex flex-col justify-between h-full'>
         <h1 className='py-2 text-3xl font-bold'>{title}</h1>

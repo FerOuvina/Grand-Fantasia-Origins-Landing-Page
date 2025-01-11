@@ -82,6 +82,7 @@ export default function NavbarSecondary() {
               width={20}
               height={20}
               title='globe'
+              loading='lazy'
             />
             {t('Language')}
           </button>
@@ -134,7 +135,13 @@ export default function NavbarSecondary() {
       <ul className='flex gap-10 relative justify-between items-center navbarSecondary h-16'>
         <div className='absolute'>
           <Link href={'/'}>
-            <img src={'/logo.jpg'} alt='logo' width={200} height={200} />
+            <img
+              src={'/logo.jpg'}
+              alt='logo'
+              width={200}
+              height={200}
+              loading='lazy'
+            />
           </Link>
         </div>
 
@@ -165,6 +172,7 @@ export default function NavbarSecondary() {
                   height={30}
                   title='discord'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -179,6 +187,7 @@ export default function NavbarSecondary() {
                   height={30}
                   title='instagram'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -191,6 +200,7 @@ export default function NavbarSecondary() {
                   height={30}
                   title='youtube'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>

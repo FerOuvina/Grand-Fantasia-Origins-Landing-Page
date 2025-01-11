@@ -13,6 +13,7 @@ export default function ComingSoon() {
             src={'/logo.jpg'}
             alt='logo'
             className='w-[300px] lg:w-[350px]'
+            loading='lazy'
           />
         </Link>
 

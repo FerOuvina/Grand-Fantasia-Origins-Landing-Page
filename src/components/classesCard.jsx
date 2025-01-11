@@ -17,10 +17,20 @@ export default function ClassesCard({
           <ul className='flex flex-col gap-6 justify-center'>
             <li className='self-center text-3xl md:text-5xl'>{job}</li>
             <li className='self-center hidden md:inline-block'>
-              <img src={'/divider-5318234.svg'} width={350} height={10} />
+              <img
+                src={'/divider-5318234.svg'}
+                width={350}
+                height={10}
+                loading='lazy'
+              />
             </li>
             <li className='self-center md:hidden'>
-              <img src={'/divider-5318234.svg'} width={280} height={10} />
+              <img
+                src={'/divider-5318234.svg'}
+                width={280}
+                height={10}
+                loading='lazy'
+              />
             </li>
             <ul className='flex px-4 gap-5 md:gap-20 justify-evenly text-2xl'>
               <li>{path1}</li>
@@ -41,6 +51,7 @@ export default function ClassesCard({
           width={300}
           height={500}
           className='hidden md:flex'
+          loading='lazy'
         />
       </article>
     </section>

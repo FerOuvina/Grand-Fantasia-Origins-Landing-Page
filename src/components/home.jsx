@@ -37,6 +37,7 @@ export default function Home() {
             src={slides[currentSlide].src}
             alt={slides[currentSlide].alt}
             className='w-full h-[388px] object-cover'
+            loading='lazy'
           />
         ) : (
           <iframe

@@ -134,7 +134,13 @@ export default function Navbar() {
       <ul className='flex gap-10 relative justify-between items-center navbarSecondary h-16'>
         <div className='absolute'>
           <a href={'#'}>
-            <img src={'/logo.jpg'} alt='logo' width={200} height={200} />
+            <img
+              src={'/logo.jpg'}
+              alt='logo'
+              width={200}
+              height={200}
+              loading='lazy'
+            />
           </a>
         </div>
 
@@ -165,6 +171,7 @@ export default function Navbar() {
                   height={30}
                   title='discord'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -179,6 +186,7 @@ export default function Navbar() {
                   height={30}
                   title='instagram'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>
@@ -191,6 +199,7 @@ export default function Navbar() {
                   height={30}
                   title='youtube'
                   className='icons'
+                  loading='lazy'
                 />
               </a>
             </li>

@@ -134,6 +134,7 @@ export default function Features2() {
                 width={70}
                 height={70}
                 className='border-8 border-button'
+                loading='lazy'
               />
             </li>
           ))}
@@ -148,7 +149,12 @@ export default function Features2() {
                 currentIndex === index ? 'flex' : 'hidden'
               } max-h-fit flex-col md:flex-row`}
               id={`image-${index}`}>
-              <img src={image} alt={`Image ${index + 1}`} width={400} />
+              <img
+                src={image}
+                alt={`Image ${index + 1}`}
+                width={400}
+                loading='lazy'
+              />
               <p className='p-4 max-w-lg bg-button'>{texts[index]}</p>
             </li>
           ))}
