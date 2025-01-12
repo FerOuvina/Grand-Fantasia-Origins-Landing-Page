@@ -92,15 +92,26 @@ export default function FounderPackInfo() {
                 {t('previewLinkText')}
               </a>
             </li>
-            <li>
+            <li className='mt-2'>
               <Link href='/comingSoon' className='navbarButton text-2xl'>
                 {t('founderBuyNowBtn')}
               </Link>
             </li>
+            <li className='text-sm text-gray-600 mt-4'>
+              {t('policiesText1')}{' '}
+              <a
+                href='#/Policies'
+                class='text-blue-500 font-medium hover:underline'>
+                {t('policiesLink')}
+              </a>{' '}
+              {t('policiesText2')}
+            </li>
           </ul>
         </article>
 
-        <h2 className='px-4 py-1 border-8 border-white bg-navbar mx-4 text-3xl text-white'>
+        <h2
+          id='/NPC'
+          className='px-4 py-1 border-8 border-white bg-navbar mx-4 text-3xl text-white'>
           {t('exclusiveNpcInfoTitle')}
         </h2>
 
@@ -117,6 +128,20 @@ export default function FounderPackInfo() {
                 <li>{t('exclusiveNpcReplacementInfo')}</li>
                 <li>{t('exclusiveNpcFromOtherGameInfo')}</li>
               </ul>
+            </li>
+            <li className='mt-2'>
+              <Link href='/comingSoon' className='navbarButton text-2xl'>
+                {t('founderBuyNowBtn')}
+              </Link>
+            </li>
+            <li className='text-sm text-gray-600 mt-2'>
+              {t('policiesText1')}{' '}
+              <a
+                href='#/Policies'
+                class='text-blue-500 font-medium hover:underline'>
+                {t('policiesLink')}
+              </a>{' '}
+              {t('policiesText2')}
             </li>
           </ul>
         </article>
@@ -216,7 +241,7 @@ export default function FounderPackInfo() {
         <h2 className='px-4 py-1 border-8 border-white bg-navbar mx-4 text-3xl text-white'>
           {t('spriteClothingTitle')}
         </h2>
-        <article id='/SpriteClothing' className='grid grid-cols-2 m-4 gap-4'>
+        <article id='/SpriteClothing' className='grid grid-cols-2 mt-4 gap-4'>
           <img
             src={t('spriteClothingImg1')}
             alt=''
@@ -229,6 +254,55 @@ export default function FounderPackInfo() {
             className='border-8 border-white w-80 place-self-start'
             loading='lazy'
           />
+        </article>
+
+        <h2
+          id='/Policies'
+          className='px-4 py-1 border-8 border-white bg-navbar mt-4 mx-4 text-3xl text-white'>
+          {t('policyTitle')}
+        </h2>
+
+        <article className='px-4 py-1 border-8 border-white bg-white mx-4 my-4 text-black'>
+          <ul>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle1')}</li>
+            <li className='text-md lg:text-lg'>{t('policySubtitle1')}</li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle2')}</li>
+            <li className='text-md lg:text-lg'>{t('policySubtitle2')}</li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle3')}</li>
+            <li className='text-md lg:text-lg'>{t('policySubtitle3')}</li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle4')}</li>
+            <li className='text-md lg:text-lg'>{t('policySubtitle4')}</li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle5')}</li>
+            <li className='text-md lg:text-lg'>{t('policySubtitle5')}</li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle6')}</li>
+            <li className='text-md lg:text-lg'>
+              {t('policySubtitle6')}{' '}
+              <a
+                href='mailto:contact@gfawakening.com'
+                className='hover:underline text-blue-600'>
+                {t('policySubtitle6Email')}
+              </a>
+              {t('policySubtitle6-1')}
+            </li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle7')}</li>
+            <li className='text-md lg:text-lg'>{t('policySubtitle7')}</li>
+            <li class='text-lg lg:text-2xl font-bold'>{t('policyTitle8')}</li>
+            <li className='text-md lg:text-lg'>
+              {t('policySubtitle8')}
+              <a
+                href='mailto:contact@gfawakening.com'
+                className='hover:underline text-blue-600'>
+                {t('policySubtitle6Email')}
+              </a>
+              {t('policySubtitle8-1')}
+            </li>
+            <li className='text-md lg:text-lg'>
+              {t('policyInfoNPC')}
+              <a href='#/NPC' className='hover:underline text-blue-600'>
+                {t('policyInfoNPCLink')}
+              </a>
+            </li>
+          </ul>
         </article>
       </section>
 

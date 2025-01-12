@@ -43,7 +43,16 @@ export default function Footer() {
               />
             </Link>
           </li>
-          <li className='text-[8px] md:text-lg'>{t('Copyright')}</li>
+          <ul className='flex flex-col items-center'>
+            <li className='text-[9px] md:text-lg'>{t('Copyright')}</li>
+            <li>
+              <a
+                href='mailto:contact@gfawakening.com'
+                className='hover:underline text-blue-600 text-[12px] md:text-lg'>
+                contact@gfawakening.online
+              </a>
+            </li>
+          </ul>
           <ul className='hidden md:flex gap-5'>
             <li>
               <a target='_blank' href={'https://discord.gg/DUpgWc9Gg5'}>
