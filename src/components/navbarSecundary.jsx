@@ -192,7 +192,7 @@ export default function NavbarSecondary() {
               </a>
             </li>
             <li>
-              <a target='_blank' href={'#'}>
+              <a target='_blank' href={'https://www.youtube.com/@GFAwakening'}>
                 <img
                   src={'/youtube.svg'}
                   alt='twitter'
