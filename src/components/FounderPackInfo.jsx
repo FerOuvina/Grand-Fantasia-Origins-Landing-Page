@@ -63,6 +63,10 @@ export default function FounderPackInfo() {
               .
             </li>
             <li>{t('founderPackUploadReceiptInfo')}</li>
+            <li>{t('founderPackUploadReceiptInfo1')}</li>
+            <li>{t('founderPackUploadReceiptInfo2')}</li>
+            <li>{t('founderPackUploadReceiptInfo3')}</li>
+            <li>{t('founderPackUploadReceiptInfo4')}</li>
             <li>
               {t('tpStonePocketHouseInfo')}{' '}
               <a href='#/PocketHouses' className='text-blue-500 underline'>
@@ -93,7 +97,7 @@ export default function FounderPackInfo() {
               </a>
             </li>
             <li className='mt-2'>
-              <Link href='/comingSoon' className='navbarButton text-2xl'>
+              <Link href='/founderBuy' className='navbarButton text-2xl'>
                 {t('founderBuyNowBtn')}
               </Link>
             </li>
@@ -130,7 +134,7 @@ export default function FounderPackInfo() {
               </ul>
             </li>
             <li className='mt-2'>
-              <Link href='/comingSoon' className='navbarButton text-2xl'>
+              <Link href='/founderBuy' className='navbarButton text-2xl'>
                 {t('founderBuyNowBtn')}
               </Link>
             </li>
@@ -148,13 +152,13 @@ export default function FounderPackInfo() {
         <article className='border-8 border-white mx-4'>
           <img
             src={t('founderPackImg')}
-            className='hidden lg:inline-block'
+            className='hidden md:inline-block'
             alt='FounderPackImg'
             loading='lazy'
           />
           <img
             src={t('founderPackImgMobile')}
-            className='lg:hidden inline-block'
+            className='md:hidden inline-block'
             alt='FounderPackImg'
             loading='lazy'
           />
@@ -349,14 +353,14 @@ export default function FounderPackInfo() {
             </button>
 
             <Link
-              href='/comingSoon'
-              className='navbarButton hidden lg:inline-block text-2xl fixed bottom-7 left-5'>
+              href='/founderBuy'
+              className='navbarButton hidden md:inline-block text-2xl fixed bottom-7 left-5'>
               {t('founderBuyNowBtn')}
             </Link>
 
             <Link
-              href='/comingSoon'
-              className='navbarButton lg:hidden text-2xl fixed bottom-7 right-5'>
+              href='/founderBuy'
+              className='navbarButton md:hidden text-2xl fixed bottom-7 right-5'>
               {t('founderBuyNowBtn')}
             </Link>
           </div>

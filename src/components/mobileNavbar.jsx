@@ -188,7 +188,7 @@ export default function Navbar() {
       {/* Second Navbar */}
       <ul className='hidden sm:flex gap-10 relative justify-between items-center navbarSecondary h-16'>
         <div className='absolute'>
-          <a href={'#'}>
+          <Link href={'/'}>
             <img
               src={'/logo.jpg'}
               alt='logo'
@@ -196,7 +196,7 @@ export default function Navbar() {
               height={150}
               loading='lazy'
             />
-          </a>
+          </Link>
         </div>
 
         <ul className='flex gap-10 justify-center w-full text-2xl'>

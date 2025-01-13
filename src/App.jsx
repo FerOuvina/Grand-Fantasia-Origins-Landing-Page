@@ -5,6 +5,7 @@ import PatchNotes from './components/patchNotes';
 import MailVerification from './pages/mailVerification';
 import FounderPackInfo from './components/FounderPackInfo';
 import ComingSoon from './components/comingSoon';
+import FounderBuyPage from './components/FounderBuyPage';
 import { Route } from 'wouter';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
       <Route path='/verify' component={MailVerification} />
       <Route path='/founderPackInfo' component={FounderPackInfo} />
       <Route path='/comingSoon' component={ComingSoon} />
+      <Route path='/founderBuy' component={FounderBuyPage} />
     </main>
   );
 }

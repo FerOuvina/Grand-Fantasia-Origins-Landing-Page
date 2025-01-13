@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGSAP } from '@gsap/react';
 import { Link } from 'wouter';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 import gsap from 'gsap';
 import '../css/navbar.css';
 
@@ -9,6 +11,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const { t, i18n } = useTranslation();
+  const { user } = useContext(UserContext);
 
   gsap.registerPlugin(useGSAP);
   const navRef = useRef();
@@ -68,9 +71,15 @@ export default function Navbar() {
   return (
     <section className='md:flex flex-col w-full hidden md:max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
-        <Link href={'/register'} className='navbarButton'>
-          <li>{t('Register')} ▷</li>
-        </Link>
+        {user ? (
+          <Link href={'/register'} className='navbarButton hidden'>
+            <li>{t('Register')} ▷</li>
+          </Link>
+        ) : (
+          <Link href={'/register'} className='navbarButton'>
+            <li>{t('Register')} ▷</li>
+          </Link>
+        )}
         <Link href={'/login'} className='navbarButton'>
           <li>{t('Login')} </li>
         </Link>

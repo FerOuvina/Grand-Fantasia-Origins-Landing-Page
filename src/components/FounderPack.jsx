@@ -28,13 +28,13 @@ export default function FounderPack() {
       <article className='border-8 border-white'>
         <img
           src={t('founderPackImg')}
-          className='hidden lg:inline-block'
+          className='hidden md:inline-block'
           alt='FounderPackImg'
           loading='lazy'
         />
         <img
           src={t('founderPackImgMobile')}
-          className='lg:hidden inline-block'
+          className='md:hidden inline-block'
           alt='FounderPackImg'
           loading='lazy'
         />
