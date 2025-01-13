@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <section className='md:flex flex-col w-full hidden md:max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
-        <Link href={'/register'} className='navbarButton hidden'>
+        <Link href={'/register'} className='navbarButton'>
           <li>{t('Register')} ▷</li>
         </Link>
         <Link href={'/login'} className='navbarButton'>
