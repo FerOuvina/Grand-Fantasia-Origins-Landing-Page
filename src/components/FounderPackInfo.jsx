@@ -125,12 +125,25 @@ export default function FounderPackInfo() {
             <li>{t('exclusiveNpcAfter15Users')}</li>
             <li>{t('exclusiveNpcReplaceExample')}</li>
             <li>{t('exclusiveNpcProfessionInfo')}</li>
+            <li>{t('exclusiveNpcAvailable')}</li>
             <li>
               {t('exclusiveNpcEligibilityInfo')}
               <ul>
                 <li>{t('exclusiveNpcNameInfo')}</li>
                 <li>{t('exclusiveNpcReplacementInfo')}</li>
-                <li>{t('exclusiveNpcFromOtherGameInfo')}</li>
+                <li>{t('exclusiveNpcInfoToUs')}</li>
+                <li>
+                  <a
+                    href='https://drive.google.com/drive/folders/1FoYXfPY-DWKfu-yNF7plBrndhxV-2lYs?usp=sharing'
+                    className='text-blue-500 underline pt-2'
+                    target='_blank'>
+                    {t('founderLinkToNPCImg')}
+                  </a>
+                  {t('exclusiveNpcFromOtherGameInfo')}
+                </li>
+                <li>{t('exclusiveNpcRemainder')}</li>
+                <li>{t('exclusiveNpcRemainder1')}</li>
+                <li>{t('exclusiveNpcRemainder2')}</li>
               </ul>
             </li>
             <li className='mt-2'>
@@ -149,7 +162,7 @@ export default function FounderPackInfo() {
             </li>
           </ul>
         </article>
-        <article className='border-8 border-white mx-4'>
+        <article className='border-8 border-white mx-4 self-center'>
           <img
             src={t('founderPackImg')}
             className='hidden md:inline-block'
@@ -158,7 +171,7 @@ export default function FounderPackInfo() {
           />
           <img
             src={t('founderPackImgMobile')}
-            className='md:hidden inline-block'
+            className='md:hidden'
             alt='FounderPackImg'
             loading='lazy'
           />
@@ -167,33 +180,56 @@ export default function FounderPackInfo() {
         <h2 className='px-4 py-1 border-8 border-white bg-navbar mt-4 mx-4 text-3xl text-white'>
           {t('pocketHousesTitle')}
         </h2>
-        <article
-          id='/PocketHouses'
-          className='grid grid-cols-2 lg:grid-cols-4 m-4 gap-4'>
-          <img
-            src={t('pocketHouseImg1')}
-            alt=''
-            className='border-8 border-white w-80'
-            loading='lazy'
-          />
-          <img
-            src={t('pocketHouseImg2')}
-            alt=''
-            className='border-8 border-white w-80'
-            loading='lazy'
-          />
-          <img
-            src={t('pocketHouseImg3')}
-            alt=''
-            className='border-8 border-white w-80'
-            loading='lazy'
-          />
-          <img
-            src={t('pocketHouseImg4')}
-            alt=''
-            className='border-8 border-white w-80'
-            loading='lazy'
-          />
+        <article id='/PocketHouses' className='grid grid-cols-2 m-4 gap-4'>
+          <div className='border-8 border-white'>
+            <h2 className='text-3xl text-center bg-white py-1'>
+              {t('pocketHouse1')}
+            </h2>
+            <img
+              src='/pocketHouse1.gif'
+              alt='Pocket House 1'
+              width={600}
+              loading='lazy'
+            />
+          </div>
+
+          <div className='border-8 border-white'>
+            <h2 className='text-3xl text-center bg-white py-1'>
+              {t('pocketHouse2')}
+            </h2>
+            <img
+              src='/pocketHouse2.gif'
+              alt='Pocket House 2'
+              width={600}
+              loading='lazy'
+            />
+          </div>
+
+          <div className='border-8 border-white'>
+            <h2 className='hidden sm:block text-3xl text-center bg-white py-1'>
+              {t('pocketHouse3')}
+            </h2>
+            <h2 className='sm:hidden text-3xl text-center bg-white py-1'>
+              {t('pocketHouse3Mobile')}
+            </h2>
+            <img
+              src='/pocketHouse3.gif'
+              alt='Pocket House 3'
+              width={600}
+              loading='lazy'
+            />
+          </div>
+          <div className='border-8 border-white'>
+            <h2 className='text-3xl text-center bg-white py-1'>
+              {t('pocketHouse4')}
+            </h2>
+            <img
+              src='/pocketHouse4.gif'
+              alt='Pocket House 4'
+              width={600}
+              loading='lazy'
+            />
+          </div>
         </article>
 
         <h2 className='px-4 py-1 border-8 border-white bg-navbar mx-4 text-3xl text-white'>
@@ -233,9 +269,15 @@ export default function FounderPackInfo() {
         </h2>
         <article
           id='/CombatDungeonMount'
-          className='grid grid-cols-1 m-4 gap-4 place-self-center'>
+          className='grid grid-cols-2 m-4 gap-4 place-self-center'>
           <img
             src={t('combatDungeonMountImg')}
+            alt=''
+            className='border-8 border-white w-80'
+            loading='lazy'
+          />
+          <img
+            src={t('combatDungeonMountImg1')}
             alt=''
             className='border-8 border-white w-80'
             loading='lazy'
