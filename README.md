@@ -25,7 +25,7 @@ Grand Fantasia Awakening is a simple yet elegant landing page designed to showca
 
 ## Demo
 
-You can view a live demo of the landing page [HERE](https://www.gfawakening.online/) [HERE].
+You can view a live demo of the landing page [HERE](https://www.gfawakening.online/)
 
 ## Installation
 
