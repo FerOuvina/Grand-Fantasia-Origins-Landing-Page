@@ -218,5 +218,9 @@
   "founderBuyDesc1": " para obter assistência sobre preços regionais.",
   "founderBuyTitleBronze": "Pacote do Fundador (Bronze)",
   "founderBuyTitleSilver": "Pacote do Fundador (Prata)",
-  "founderBuyTitleGold": "Pacote do Fundador (Ouro)"
+  "founderBuyTitleGold": "Pacote do Fundador (Ouro)",
+  "LoginOK": "Login bem-sucedido",
+  "LoginError": "Erro de login",
+  "LoginRedirect": "Você será redirecionado para a tela de perfil agora.",
+  "yourAP": "Seu AP: "
 }

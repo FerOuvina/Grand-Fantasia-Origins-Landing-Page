@@ -228,5 +228,9 @@
   "AccountUserName": "User name:",
   "AccountEmail": "Email address:",
   "LoginFirstError": "An error has ocurred",
-  "LoginFirstErrorLater": "Please log in before using this section"
+  "LoginFirstErrorLater": "Please log in before using this section",
+  "LoginOK": "Login Successful",
+  "LoginError": "Login Error",
+  "LoginRedirect": "You will be redirected to the profile screen now.",
+  "yourAP": "Your AP: "
 }

@@ -124,7 +124,7 @@ export default function FounderBuyPage() {
 
         <h2
           id='/Policies'
-          className='px-4 py-1 border-8 border-white bg-navbar mt-4 mx-4 text-3xl text-white'>
+          className='px-4 py-1 border-8 border-white bg-navbar mx-4 text-3xl text-white'>
           {t('policyTitle')}
         </h2>
 

@@ -22,16 +22,12 @@ export default function MailVerification() {
 
   const handleVerification = async (token) => {
     try {
-      const { data } = await getVerify({ token });
-      if (data) {
-        setStatus(statuses.SUCCESS);
-        setMessage(t('VerificationPage.successMessage'));
-      }
+      await getVerify(token);
+      setStatus(statuses.SUCCESS);
+      setMessage(t('VerificationPage.successMessage'));
     } catch (error) {
       setStatus(statuses.ERROR);
-      setMessage(
-        error.response?.data?.message || t('VerificationPage.errorMessage')
-      );
+      setMessage(error.message || t('VerificationPage.errorMessage'));
     }
   };
 
@@ -49,22 +45,20 @@ export default function MailVerification() {
 
   return (
     <section className='center-container'>
-      <div className='verification-box border-white border-8 bg-background'>
-        <Link href='/'>
-          <img src={'/logo.jpg'} alt='logo' width={400} height={400} />
-        </Link>
+      <div className='bg-background border-8 border-white'>
+        <img src={'/logo.jpg'} alt='logo' width={400} height={400} />
 
         {status === statuses.LOADING && (
           <p className='status-message'>{t('VerificationPage.loading')}</p>
         )}
 
         {status === statuses.SUCCESS && (
-          <div className='items-center flex flex-col gap-3 w-full mt-auto bg-white'>
+          <div className='flex flex-col items-center bg-white pt-4 gap-3 w-full'>
             <h1 className='success-message'>{t('VerificationPage.success')}</h1>
             <img src={'/divider-5318234.svg'} width={350} height={10} />
             <p className='status-message'>{message}</p>
             <section className='flex justify-evenly p-4 bg-origins w-full'>
-              <Link href='/' className='Button'>
+              <Link href='/' className='link-button'>
                 {t('goHome')}
               </Link>
             </section>
@@ -72,14 +66,14 @@ export default function MailVerification() {
         )}
 
         {status === statuses.ERROR && (
-          <div className='items-center  flex flex-col gap-3 w-full mt-auto bg-white pt-2 mx-4'>
+          <div className='flex flex-col items-center bg-white pt-4 gap-3 w-full'>
             <h1 className='error-message'>{t('VerificationPage.fail')}</h1>
             <img src={'/divider-5318234.svg'} width={350} height={10} />
             <p className='status-message'>{message}</p>
             <section className='flex justify-evenly p-4 bg-origins w-full'>
               <Link
                 href='/register'
-                className='p-2 text-2xl text-center navbarButton'>
+                className='p-2 text-2xl text-center Button'>
                 {t('tryAgain')}
               </Link>
             </section>

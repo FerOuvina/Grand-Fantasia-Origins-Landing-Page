@@ -123,24 +123,14 @@ export default function Register() {
         timerProgressBar: true
       });
     } catch (error) {
-      if(error.response){
-        MySwal.fire({
-          icon: 'error',
-          title: t('registrationFailed'),
-          text: error.response ? error.response?.data?.error : t('tryAgainLater'),
-          position: 'center',
-          showConfirmButton: true,
-          timer: 15000,
-          timerProgressBar: true
-        });
-        return;
-      }
       MySwal.fire({
         icon: 'error',
-        title: t('unexpectedError'),
-        text: t('tryAgainLater'),
+        title: t('registrationFailed'),
+        text: error.response ? error.response?.data?.error : t('tryAgainLater'),
         position: 'center',
-        showConfirmButton: true
+        showConfirmButton: true,
+        timer: 15000,
+        timerProgressBar: true
       });
     }
   };

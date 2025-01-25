@@ -1,16 +1,25 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 import '../css/navbar.css';
 
 export default function Footer() {
+  const { user } = useContext(UserContext);
   const { t } = useTranslation();
 
   return (
     <footer className='flex flex-col w-full bg-white max-w-[1250px]'>
       <section className='flex justify-evenly p-4 bg-origins'>
-        <Link href={'/register'} className='p-2 text-xl text-center Button'>
-          {t('Register')}
-        </Link>
+        {user ? (
+          <Link href='/comingSoon' className='p-2 text-xl text-center Button'>
+            {t('BuyAp')}
+          </Link>
+        ) : (
+          <Link href={'/register'} className='p-2 text-xl text-center Button'>
+            {t('Register')}
+          </Link>
+        )}
         <a
           href={
             'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
@@ -23,7 +32,7 @@ export default function Footer() {
       <section className='flex justify-center'>
         <ul className='flex justify-evenly items-center w-full'>
           <li>
-            <Link href={'/'} className='hidden md:inline-block'>
+            <a href={'/'} className='hidden md:inline-block'>
               <img
                 src={'/logo.jpg'}
                 alt='Random'
@@ -31,9 +40,9 @@ export default function Footer() {
                 height={100}
                 loading='lazy'
               />
-            </Link>
+            </a>
 
-            <Link href={'/'} className='md:hidden inline-block'>
+            <a href={'/'} className='md:hidden inline-block'>
               <img
                 src={'/logo.jpg'}
                 alt='Random'
@@ -41,7 +50,7 @@ export default function Footer() {
                 height={50}
                 loading='lazy'
               />
-            </Link>
+            </a>
           </li>
           <ul className='flex flex-col items-center'>
             <li className='text-[9px] md:text-lg'>{t('Copyright')}</li>

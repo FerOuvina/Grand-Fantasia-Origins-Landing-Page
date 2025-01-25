@@ -1,12 +1,14 @@
 import Footer from './footer';
+import NavbarSecondary from './navbarSecundary';
+import Features2 from './Features2';
 import DiscordWidget from './discordWidget';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-import NavbarSecondary from './navbarSecundary';
-import MobileNavbar from './mobileNavbar';
-import Features2 from './Features2';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { UserContext } from '../context/UserContext';
+import { postLogin } from '../services/auth';
+import { Link } from 'wouter';
 import '../css/navbar.css';
 
 const MySwal = withReactContent(Swal);
@@ -17,9 +19,10 @@ export default function Login() {
   const passwordErrorNone = t('passwordErrorNone');
   const passwordErrorLength = t('passwordErrorLength');
   const validationError = t('validationError');
-
+  const { setUser, setUserAP } = useContext(UserContext);
+  const [message, setMessage] = useState();
   const [formData, setFormData] = useState({
-    usernameOrEmail: '',
+    username: '',
     password: ''
   });
 
@@ -35,8 +38,8 @@ export default function Login() {
     let valid = true;
     let errorMessages = [];
 
-    if (!formData.usernameOrEmail) {
-      errorMessages.push(usernameError);
+    if (!formData.username) {
+      errorMessages.push(username);
       valid = false;
     }
 
@@ -68,11 +71,47 @@ export default function Login() {
     return valid;
   };
 
+  const handleLogin = async () => {
+    try {
+      const result = await postLogin(formData);
+
+      // Save the token in localStorage
+      localStorage.setItem('authToken', result.token);
+      setUser({ name: result.user.username, email: result.user.email });
+      const resultAP = await getUserAP(result.token);
+      setUserAP({ AP: result.pvalues });
+
+      MySwal.fire({
+        icon: 'success',
+        title: t('LoginOK'),
+        text: t('LoginRedirect'),
+        position: 'center',
+        showConfirmButton: true,
+        timer: 3000,
+        timerProgressBar: true
+      });
+      // Update app state or navigate to the dashboard
+      setMessage('Login successful!');
+    } catch (error) {
+      setMessage(error.message || 'Login failed');
+      MySwal.fire({
+        icon: 'error',
+        title: t('LoginError'),
+        html: error.response ? error.response?.data?.error : t('tryAgainLater'),
+        position: 'center',
+        showConfirmButton: true,
+        timer: 10000,
+        timerProgressBar: true,
+        background: '#f8d7da',
+        iconColor: '#dc3545'
+      });
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Form data submitted:', formData);
-      // Send data to API
+      handleLogin();
     } else {
       console.log('Form validation failed');
     }
@@ -81,11 +120,10 @@ export default function Login() {
   return (
     <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-full'>
       <NavbarSecondary />
-      <MobileNavbar />
-      <article className='my-4 px-2 md:px-0 w-full border-8 border-white bg-background'>
+      <article className='my-4 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
-          <div className='h-[314px] flex flex-col items-center my-4 border-8 border-white w-fit'>
-            <h1 className='px-4 py-2 w-full text-xl md:text-3xl text-white bg-origins'>
+          <div className='h-[313.4px] flex flex-col items-center my-4 border-8 border-white w-fit'>
+            <h1 className='px-4 py-2 w-full text-3xl text-white bg-origins'>
               {t('loginTitle')}
             </h1>
 
@@ -93,21 +131,21 @@ export default function Login() {
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-lg md:text-xl text-white bg-origins'>
-              <div className='grid relative grid-cols-2 gap-3 md:pr-2 w-full'>
-                <label htmlFor='usernameOrEmail' className='text-right'>
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-xl text-white bg-origins'>
+              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+                <label htmlFor='username' className='text-right'>
                   {t('usernameField')}
                 </label>
                 <input
                   type='text'
-                  id='usernameOrEmail'
-                  name='usernameOrEmail'
-                  value={formData.usernameOrEmail}
+                  id='username'
+                  name='username'
+                  value={formData.username}
                   onChange={handleChange}
                   className='inputField'
                 />
               </div>
-              <div className='grid relative grid-cols-2 gap-3 md:pr-2 w-full'>
+              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
                 <label htmlFor='password' className='text-right'>
                   {t('passwordField')}
                 </label>
@@ -120,24 +158,18 @@ export default function Login() {
                   className='inputField'
                 />
               </div>
-              <div className='grid grid-cols-2 gap-3 md:pr-2 mt-2 w-full'>
-                <button
-                  type='button'
-                  className='navbarButton text-sm md:text-lg'>
-                  {t('forgotPassword')}
+              <div className='grid grid-cols-2 gap-3 pr-4 mt-2 w-full'>
+                <button type='button' className='navbarButton'>
+                  <Link href='/comingSoon'>{t('forgotPassword')}</Link>
                 </button>
-                <button
-                  type='submit'
-                  className='navbarButton text-sm md:text-lg'>
+                <button type='submit' className='navbarButton'>
                   {t('loginButton')}
                 </button>
               </div>
             </form>
           </div>
 
-          <div className='hidden md:inline-block'>
-            <DiscordWidget />
-          </div>
+          <DiscordWidget />
         </div>
       </article>
       <Features2 />

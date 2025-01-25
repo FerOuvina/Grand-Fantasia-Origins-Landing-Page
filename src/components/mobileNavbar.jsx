@@ -1,13 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGSAP } from '@gsap/react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 import gsap from 'gsap';
 import '../css/navbar.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [location, navigate] = useLocation();
   const dropdownRef = useRef(null);
+  const { user, userAP, setUser } = useContext(UserContext);
   const { t, i18n } = useTranslation();
 
   gsap.registerPlugin(useGSAP);
@@ -65,16 +69,41 @@ export default function Navbar() {
     i18n.changeLanguage(language);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setUser(null);
+    navigate('/');
+  };
+
   return (
     <section className='md:hidden w-full mt-4 lg:max-w-[1250px] z-20 sticky top-0'>
       <ul className='sm:hidden flex gap-10 justify-between items-center navbarSecondary h-16 text-sm sm:text-lg'>
         <ul className='flex gap-4 justify-center w-full'>
-          <Link href={'/register'} className=''>
-            <li>{t('Register')}</li>
-          </Link>
-          <Link href={'/login'} className=''>
-            <li>{t('Login')}</li>
-          </Link>
+          {user ? (
+            <>
+              <Link href='/profile'>
+                <li className='navbarButton'>{user.name}</li>
+              </Link>
+              <Link href='/comingSoon'>
+                <li className='navbarButton'>
+                  {t('yourAP')}
+                  {userAP ? userAP.AP : 0}
+                </li>
+              </Link>
+              <li className='navbarButton'>
+                <button onClick={handleLogout}>{t('Logout')}</button>
+              </li>
+            </>
+          ) : (
+            <>
+              <Link href={'/register'} className=''>
+                <li>{t('Register')} ▷</li>
+              </Link>
+              <Link href={'/login'} className=''>
+                <li>{t('Login')} </li>
+              </Link>
+            </>
+          )}
           {/* Dropdown */}
           <li className='relative' ref={dropdownRef}>
             <button onClick={toggleDropdown} className='flex gap-2'>
@@ -123,12 +152,31 @@ export default function Navbar() {
       </ul>
 
       <ul className='hidden sm:flex gap-2 justify-end py-2 w-full'>
-        <Link href={'/register'} className='navbarButton'>
-          <li>{t('Register')} ▷</li>
-        </Link>
-        <Link href={'/login'} className='navbarButton'>
-          <li>{t('Login')} </li>
-        </Link>
+        {user ? (
+          <>
+            <Link href='/profile'>
+              <li className='navbarButton'>{user.name}</li>
+            </Link>
+            <Link href='/comingSoon'>
+              <li className='navbarButton'>
+                {t('yourAP')}
+                {userAP ? userAP.AP : 0}
+              </li>
+            </Link>
+            <li className='navbarButton'>
+              <button onClick={handleLogout}>{t('Logout')}</button>
+            </li>
+          </>
+        ) : (
+          <>
+            <Link href={'/register'} className=''>
+              <li>{t('Register')} ▷</li>
+            </Link>
+            <Link href={'/login'} className=''>
+              <li>{t('Login')} </li>
+            </Link>
+          </>
+        )}
         <li className='relative' ref={dropdownRef}>
           <button onClick={toggleDropdown} className='flex gap-2 navbarButton'>
             <img
@@ -188,7 +236,7 @@ export default function Navbar() {
       {/* Second Navbar */}
       <ul className='hidden sm:flex gap-10 relative justify-between items-center navbarSecondary h-16'>
         <div className='absolute'>
-          <Link href={'/'}>
+          <a href={'/'}>
             <img
               src={'/logo.jpg'}
               alt='logo'
@@ -196,26 +244,34 @@ export default function Navbar() {
               height={150}
               loading='lazy'
             />
-          </Link>
+          </a>
         </div>
 
         <ul className='flex gap-10 justify-center w-full text-2xl'>
           <Link href={'/'} className='hover:underline hover:drop-shadow-lg'>
             <li>{t('HomeNav')}</li>
           </Link>
-          <a href={'#/news'} className='hover:underline hover:drop-shadow-lg'>
-            <li>{t('NewsNav')}</li>
-          </a>
-          <a
-            href={'#/classes'}
-            className='hover:underline hover:drop-shadow-lg'>
-            <li>{t('ClassesNav')}</li>
-          </a>
-          <a
-            href={'#/features'}
-            className='hover:underline hover:drop-shadow-lg'>
-            <li>{t('FeaturesNav')}</li>
-          </a>
+          <li>
+            <a
+              href={'/#/news'}
+              className='hover:underline hover:drop-shadow-lg'>
+              {t('NewsNav')}
+            </a>
+          </li>
+          <li>
+            <a
+              href={'/#/classes'}
+              className='hover:underline hover:drop-shadow-lg'>
+              {t('ClassesNav')}
+            </a>
+          </li>
+          <li>
+            <a
+              href={'/#/features'}
+              className='hover:underline hover:drop-shadow-lg'>
+              {t('FeaturesNav')}
+            </a>
+          </li>
           <ul className='flex gap-5 self-center'>
             <li>
               <a target='_blank' href={'https://discord.gg/DUpgWc9Gg5'}>

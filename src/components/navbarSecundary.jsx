@@ -1,13 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGSAP } from '@gsap/react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 import gsap from 'gsap';
 import '../css/navbar.css';
 
 export default function NavbarSecondary() {
   const [isOpen, setIsOpen] = useState(false);
+  const [location, navigate] = useLocation();
   const dropdownRef = useRef(null);
+  const { user, userAP, setUser } = useContext(UserContext);
   const { t, i18n } = useTranslation();
 
   gsap.registerPlugin(useGSAP);
@@ -65,15 +69,40 @@ export default function NavbarSecondary() {
     i18n.changeLanguage(language);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setUser(null);
+    navigate('/');
+  };
+
   return (
     <section className='hidden md:flex flex-col w-full max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
-        <Link href={'/register'} className='navbarButton'>
-          <li>{t('Register')} ▷</li>
-        </Link>
-        <Link href={'/login'} className='navbarButton'>
-          <li>{t('Login')}</li>
-        </Link>
+        {user ? (
+          <>
+            <Link href='/profile'>
+              <li className='navbarButton'>{user.name}</li>
+            </Link>
+            <Link href='/comingSoon'>
+              <li className='navbarButton'>
+                {t('yourAP')}
+                {userAP ? userAP.AP : 0}
+              </li>
+            </Link>
+            <li className='navbarButton'>
+              <button onClick={handleLogout}>{t('Logout')}</button>
+            </li>
+          </>
+        ) : (
+          <>
+            <Link href={'/register'} className='navbarButton'>
+              <li>{t('Register')} ▷</li>
+            </Link>
+            <Link href={'/login'} className='navbarButton'>
+              <li>{t('Login')} </li>
+            </Link>
+          </>
+        )}
         <li className='relative' ref={dropdownRef}>
           <button onClick={toggleDropdown} className='flex gap-2 navbarButton'>
             <img
@@ -134,7 +163,7 @@ export default function NavbarSecondary() {
       {/* Second Navbar */}
       <ul className='flex gap-10 relative justify-between items-center navbarSecondary h-16'>
         <div className='absolute'>
-          <Link href={'/'}>
+          <a href={'/'}>
             <img
               src={'/logo.jpg'}
               alt='logo'
@@ -142,7 +171,7 @@ export default function NavbarSecondary() {
               height={200}
               loading='lazy'
             />
-          </Link>
+          </a>
         </div>
 
         <ul className='flex gap-10 justify-center w-full text-2xl'>
