@@ -22,7 +22,7 @@ export default function Footer() {
         )}
         <a
           href={
-            'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
+            'https://drive.google.com/file/d/1tZTsIEmNDF_mSFWr3g4f-hMh0DWPF1GK/view?usp=sharing'
           }
           target='_blank'
           className='p-2 text-xl text-center Button'>

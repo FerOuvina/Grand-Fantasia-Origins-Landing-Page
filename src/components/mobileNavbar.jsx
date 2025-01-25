@@ -142,7 +142,7 @@ export default function Navbar() {
           </div>
           <a
             href={
-              'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
+              'https://drive.google.com/file/d/1tZTsIEmNDF_mSFWr3g4f-hMh0DWPF1GK/view?usp=sharing'
             }
             target='_blank'
             className=''>
@@ -225,7 +225,7 @@ export default function Navbar() {
 
         <a
           href={
-            'https://drive.google.com/file/d/1mRXUyiEW_VIJGmor5oiGxMYR4SyNAMCL/view?usp=sharing'
+            'https://drive.google.com/file/d/1tZTsIEmNDF_mSFWr3g4f-hMh0DWPF1GK/view?usp=sharing'
           }
           target='_blank'
           className='navbarButton'>
