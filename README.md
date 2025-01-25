@@ -1,6 +1,6 @@
-# Grand Fantasia Origins Landing Page
+# Grand Fantasia Awakening
 
-Welcome to the Grand Fantasia Origins Landing Page repository! This repository contains the code for the website for the game Grand Fantasia Origins.
+Welcome to the Grand Fantasia Awakening repository! This repository contains the code for the website for the game Grand Fantasia Origins.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ Welcome to the Grand Fantasia Origins Landing Page repository! This repository c
 
 ## About
 
-Grand Fantasia Origins Landing Page is a simple yet elegant landing page designed to showcase the game Grand Fantasia Origins. It is built using Next.js.
+Grand Fantasia Awakening is a simple yet elegant landing page designed to showcase the game Grand Fantasia Awakening. It is built using React.
 
 ## Features
 
@@ -25,7 +25,7 @@ Grand Fantasia Origins Landing Page is a simple yet elegant landing page designe
 
 ## Demo
 
-You can view a live demo of the landing page [SOON TM](#) [SOON TM].
+You can view a live demo of the landing page [HERE](https://www.gfawakening.online/)
 
 ## Installation
 
