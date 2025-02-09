@@ -18,7 +18,7 @@ export default function News() {
           title={t('Title')}
           description={t('Description')}
           image={'/KissEmote.gif'}
-          date={'11/01/2025'}
+          date={'6/02/2025'}
           link={t('link')}
           linkText={t('linkText')}
         />
